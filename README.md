@@ -13,14 +13,14 @@ How to Run:
   The tests will run on the cosole and in the end give a status as pass or fail on the console with extra
   information where needed.
   
-Reports 
+Reports:
   Three report files will be generated in the folder where the tests are present
   eg: ..\Quandoo_Project\build_sanity\reports
   The report.html file will give you a representation of all the tests with the status and also tell what each keyword does . 
   Other report files will also be present viz. log.html and output.xml
   I have kept a few example reports in the folder.
   
-Faliure Analysis
+Faliure Analysis:
   If in case a test fails a screenshot with the test case name and date appended will be created.
   The Console itself will also throw an error.
   
