@@ -1,0 +1,2 @@
+this will have all the ui objects on the screen . 
+this objects are static and will not mostly change . 

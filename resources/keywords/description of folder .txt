@@ -1,0 +1,8 @@
+This folder has all the keyword definitions
+In this folder you have to add all the keywords that you define further in the project
+Also add the name of the file in the all_keywords.robot file so that anyone who later adds to it can just 
+import the resource all_keywords and he/ she is done with it.
+
+base_ui_keywords  - has all the basic keywords that are on ui
+file_operation_keywords - any keywords that are associated with file operation
+table_operation_keywords - any keywords that are associated with tables on ui 

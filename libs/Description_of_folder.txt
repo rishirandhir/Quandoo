@@ -1,0 +1,5 @@
+This folder will house all the external libraries written by user.
+
+ex: quandoo_logger - can be used to log info / debug / error if any 
+    xls_to_robot - this file converts the xls file data into list variable that can be used in framework.
+    

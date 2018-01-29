@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180128 16:19:30.226" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\python scripts the hard way\Robot\quandoo_project\build_sanity\build_sanity.robot" id="s1" name="Build Sanity">
+<test id="s1-t1" name="Verify the correct credentials">
+<kw name="Open Browser For Test" library="baseui_keywords">
+<doc>This keyword is used to open login page in browser.</doc>
+<arguments>
+<arg>${HOST}/login</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://${HOST123}</arg>
+<arg>${BROWSER123}</arg>
+</arguments>
+<msg timestamp="20180128 16:19:30.472" level="INFO">Opening browser 'chrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" endtime="20180128 16:19:43.127" starttime="20180128 16:19:30.471"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180128 16:19:44.278" starttime="20180128 16:19:43.127"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:19:44.278" starttime="20180128 16:19:30.471"></status>
+</kw>
+<kw name="Enter Login Credentials" library="baseui_keywords">
+<doc>This keyword is used to enter the values in the fields of Username and Password.</doc>
+<arguments>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_LOGIN_USER_CONSOLE}</arg>
+<arg>${VALID_USER}</arg>
+</arguments>
+<msg timestamp="20180128 16:19:44.280" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<status status="PASS" endtime="20180128 16:19:44.411" starttime="20180128 16:19:44.280"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_PASS_USER_CONSOLE}</arg>
+<arg>${VALID_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20180128 16:19:44.412" level="INFO">Typing password into text field 'id=password'.</msg>
+<status status="PASS" endtime="20180128 16:19:44.546" starttime="20180128 16:19:44.411"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:19:44.546" starttime="20180128 16:19:44.279"></status>
+</kw>
+<kw name="Click On Button" library="baseui_keywords">
+<doc>This keyword is used to click on buttons on webpage.</doc>
+<arguments>
+<arg>${CLICKONLOGINBUTTON}</arg>
+</arguments>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${CLICKONBUTTON}</arg>
+</arguments>
+<msg timestamp="20180128 16:19:44.549" level="INFO">Clicking button '//button[.//text() = ' Login']'.</msg>
+<status status="PASS" endtime="20180128 16:19:45.462" starttime="20180128 16:19:44.549"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:19:45.462" starttime="20180128 16:19:44.548"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${SECURE_MSG_STRING}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:19:45.492" starttime="20180128 16:19:45.467"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${CLICKONLOGOUTLINK}</arg>
+</arguments>
+<msg timestamp="20180128 16:19:45.494" level="INFO">Clicking link 'xpath = //*[@id="content"]/div/a'.</msg>
+<status status="PASS" endtime="20180128 16:19:47.281" starttime="20180128 16:19:45.493"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${SECURE_LOGOUT_STRING}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:19:47.314" starttime="20180128 16:19:47.282"></status>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180128 16:19:50.390" starttime="20180128 16:19:47.315"></status>
+</kw>
+<kw type="teardown" name="End Test" library="baseui_keywords">
+<doc>This keyword is used to capture screenshot of page whenever test-case fails.</doc>
+<arguments>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>str(time.time())</arg>
+<arg>time</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180128 16:19:50.398" level="INFO">${time} = 1517136590.4</msg>
+<status status="PASS" endtime="20180128 16:19:50.398" starttime="20180128 16:19:50.396"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_NAME}-${time}.png</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:19:50.401" starttime="20180128 16:19:50.399"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:19:50.401" starttime="20180128 16:19:50.393"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:19:50.403" critical="yes" starttime="20180128 16:19:30.469"></status>
+</test>
+<test id="s1-t2" name="Verify the values of multiple negative users">
+<kw name="Get Credentials From Xls Location And Verify Login" library="baseui_keywords">
+<doc>This keyword is used to test bulk negative values from a xls file.</doc>
+<arguments>
+<arg>${FILENAME}</arg>
+</arguments>
+<kw name="Get Input Data From XLS File" library="file_operation_keywords">
+<doc>This keyword reads values from xls file.</doc>
+<arguments>
+<arg>${FILENAME}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<kw name="Exls To Robot" library="xls_to_robot">
+<arguments>
+<arg>${FILE_NAME}</arg>
+</arguments>
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20180128 16:19:50.443" level="INFO">${data} = [[(u'VM_USER', u'invalid_username'), (u'VM_PASSWORD', u'SuperSecretPassword!')], [(u'VM_USER', u'tomsmith'), (u'VM_PASSWORD', u'InvalidPassword')]]</msg>
+<status status="PASS" endtime="20180128 16:19:50.443" starttime="20180128 16:19:50.427"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20180128 16:19:50.444" level="INFO">[[(u'VM_USER', u'invalid_username'), (u'VM_PASSWORD', u'SuperSecretPassword!')], [(u'VM_USER', u'tomsmith'), (u'VM_PASSWORD', u'InvalidPassword')]]</msg>
+<status status="PASS" endtime="20180128 16:19:50.444" starttime="20180128 16:19:50.444"></status>
+</kw>
+<msg timestamp="20180128 16:19:50.445" level="INFO">${data} = [[(u'VM_USER', u'invalid_username'), (u'VM_PASSWORD', u'SuperSecretPassword!')], [(u'VM_USER', u'tomsmith'), (u'VM_PASSWORD', u'InvalidPassword')]]</msg>
+<status status="PASS" endtime="20180128 16:19:50.445" starttime="20180128 16:19:50.425"></status>
+</kw>
+<kw type="for" name="${use_pass} IN [ @{data} ]">
+<kw type="foritem" name="${use_pass} = [(u'VM_USER', u'invalid_username'), (u'VM_PASSWORD', u'SuperSecretPassword!')]">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${use_pass[0]}</arg>
+</arguments>
+<assign>
+<var>${Val_User}</var>
+</assign>
+<msg timestamp="20180128 16:19:50.446" level="INFO">${Val_User} = (u'VM_USER', u'invalid_username')</msg>
+<status status="PASS" endtime="20180128 16:19:50.446" starttime="20180128 16:19:50.446"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Val_User[1]}</arg>
+</arguments>
+<assign>
+<var>${Val_User}</var>
+</assign>
+<msg timestamp="20180128 16:19:50.447" level="INFO">${Val_User} = invalid_username</msg>
+<status status="PASS" endtime="20180128 16:19:50.448" starttime="20180128 16:19:50.447"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${use_pass[1]}</arg>
+</arguments>
+<assign>
+<var>${Val_Pass}</var>
+</assign>
+<msg timestamp="20180128 16:19:50.449" level="INFO">${Val_Pass} = (u'VM_PASSWORD', u'SuperSecretPassword!')</msg>
+<status status="PASS" endtime="20180128 16:19:50.449" starttime="20180128 16:19:50.448"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Val_Pass[1]}</arg>
+</arguments>
+<assign>
+<var>${Val_Pass}</var>
+</assign>
+<msg timestamp="20180128 16:19:50.450" level="INFO">${Val_Pass} = SuperSecretPassword!</msg>
+<status status="PASS" endtime="20180128 16:19:50.450" starttime="20180128 16:19:50.449"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${\n}Starting validation for user ${Val_User} from xls file.</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:19:50.453" starttime="20180128 16:19:50.450"></status>
+</kw>
+<kw name="Open Browser For Test" library="baseui_keywords">
+<doc>This keyword is used to open login page in browser.</doc>
+<arguments>
+<arg>${HOST}/login</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://${HOST123}</arg>
+<arg>${BROWSER123}</arg>
+</arguments>
+<msg timestamp="20180128 16:19:50.455" level="INFO">Opening browser 'chrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" endtime="20180128 16:20:02.411" starttime="20180128 16:19:50.455"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180128 16:20:03.569" starttime="20180128 16:20:02.411"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:03.569" starttime="20180128 16:19:50.454"></status>
+</kw>
+<kw name="Enter Login Credentials" library="baseui_keywords">
+<doc>This keyword is used to enter the values in the fields of Username and Password.</doc>
+<arguments>
+<arg>${Val_User}</arg>
+<arg>${Val_Pass}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_LOGIN_USER_CONSOLE}</arg>
+<arg>${VALID_USER}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:03.571" level="INFO">Typing text 'invalid_username' into text field 'id=username'.</msg>
+<status status="PASS" endtime="20180128 16:20:03.737" starttime="20180128 16:20:03.571"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_PASS_USER_CONSOLE}</arg>
+<arg>${VALID_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:03.738" level="INFO">Typing password into text field 'id=password'.</msg>
+<status status="PASS" endtime="20180128 16:20:03.872" starttime="20180128 16:20:03.737"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:03.872" starttime="20180128 16:20:03.570"></status>
+</kw>
+<kw name="Click On Button" library="baseui_keywords">
+<doc>This keyword is used to click on buttons on webpage.</doc>
+<arguments>
+<arg>${CLICKONLOGINBUTTON}</arg>
+</arguments>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${CLICKONBUTTON}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:03.874" level="INFO">Clicking button '//button[.//text() = ' Login']'.</msg>
+<status status="PASS" endtime="20180128 16:20:06.510" starttime="20180128 16:20:03.874"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:06.510" starttime="20180128 16:20:03.874"></status>
+</kw>
+<kw name="Check Bad UserName Or Password" library="baseui_keywords">
+<doc>This keyword is used toverify if the user name or password is incorrect.</doc>
+<assign>
+<var>${flag}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${FLASH_ERROR}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:06.557" starttime="20180128 16:20:06.511"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${FLASH_ERROR_WO_SPACES}</arg>
+</arguments>
+<assign>
+<var>${Response}</var>
+</assign>
+<msg timestamp="20180128 16:20:06.609" level="INFO">${Response} = Your username is invalid!
+×</msg>
+<status status="PASS" endtime="20180128 16:20:06.609" starttime="20180128 16:20:06.557"></status>
+</kw>
+<kw name="Get Lines Containing String" library="String">
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<arguments>
+<arg>${Response}</arg>
+<arg>${FAILED_LOGIN_TEXT}</arg>
+</arguments>
+<assign>
+<var>${temp_val}</var>
+</assign>
+<msg timestamp="20180128 16:20:06.609" level="INFO">1 out of 2 lines matched</msg>
+<msg timestamp="20180128 16:20:06.610" level="INFO">${temp_val} = Your username is invalid!</msg>
+<status status="PASS" endtime="20180128 16:20:06.610" starttime="20180128 16:20:06.609"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${temp_val}' == '${FAILED_LOGIN_USER}' or '${temp_val}' == '${FAILED_LOGIN_PASS}'</arg>
+<arg>Set Variable</arg>
+<arg>True</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>False</arg>
+</arguments>
+<assign>
+<var>${flag}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>True</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:06.611" starttime="20180128 16:20:06.611"></status>
+</kw>
+<msg timestamp="20180128 16:20:06.611" level="INFO">${flag} = True</msg>
+<status status="PASS" endtime="20180128 16:20:06.611" starttime="20180128 16:20:06.610"></status>
+</kw>
+<msg timestamp="20180128 16:20:06.611" level="INFO">${flag} = True</msg>
+<status status="PASS" endtime="20180128 16:20:06.611" starttime="20180128 16:20:06.510"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${flag}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:06.612" starttime="20180128 16:20:06.611"></status>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180128 16:20:09.673" starttime="20180128 16:20:06.612"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:09.673" starttime="20180128 16:19:50.445"></status>
+</kw>
+<kw type="foritem" name="${use_pass} = [(u'VM_USER', u'tomsmith'), (u'VM_PASSWORD', u'InvalidPassword')]">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${use_pass[0]}</arg>
+</arguments>
+<assign>
+<var>${Val_User}</var>
+</assign>
+<msg timestamp="20180128 16:20:09.675" level="INFO">${Val_User} = (u'VM_USER', u'tomsmith')</msg>
+<status status="PASS" endtime="20180128 16:20:09.676" starttime="20180128 16:20:09.674"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Val_User[1]}</arg>
+</arguments>
+<assign>
+<var>${Val_User}</var>
+</assign>
+<msg timestamp="20180128 16:20:09.677" level="INFO">${Val_User} = tomsmith</msg>
+<status status="PASS" endtime="20180128 16:20:09.677" starttime="20180128 16:20:09.676"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${use_pass[1]}</arg>
+</arguments>
+<assign>
+<var>${Val_Pass}</var>
+</assign>
+<msg timestamp="20180128 16:20:09.679" level="INFO">${Val_Pass} = (u'VM_PASSWORD', u'InvalidPassword')</msg>
+<status status="PASS" endtime="20180128 16:20:09.679" starttime="20180128 16:20:09.678"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Val_Pass[1]}</arg>
+</arguments>
+<assign>
+<var>${Val_Pass}</var>
+</assign>
+<msg timestamp="20180128 16:20:09.681" level="INFO">${Val_Pass} = InvalidPassword</msg>
+<status status="PASS" endtime="20180128 16:20:09.681" starttime="20180128 16:20:09.680"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${\n}Starting validation for user ${Val_User} from xls file.</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:09.685" starttime="20180128 16:20:09.682"></status>
+</kw>
+<kw name="Open Browser For Test" library="baseui_keywords">
+<doc>This keyword is used to open login page in browser.</doc>
+<arguments>
+<arg>${HOST}/login</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://${HOST123}</arg>
+<arg>${BROWSER123}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:09.689" level="INFO">Opening browser 'chrome' to base url 'http://the-internet.herokuapp.com/login'.</msg>
+<status status="PASS" endtime="20180128 16:20:23.144" starttime="20180128 16:20:09.688"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180128 16:20:24.302" starttime="20180128 16:20:23.144"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:24.302" starttime="20180128 16:20:09.686"></status>
+</kw>
+<kw name="Enter Login Credentials" library="baseui_keywords">
+<doc>This keyword is used to enter the values in the fields of Username and Password.</doc>
+<arguments>
+<arg>${Val_User}</arg>
+<arg>${Val_Pass}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_LOGIN_USER_CONSOLE}</arg>
+<arg>${VALID_USER}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:24.304" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<status status="PASS" endtime="20180128 16:20:24.426" starttime="20180128 16:20:24.304"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ID_PASS_USER_CONSOLE}</arg>
+<arg>${VALID_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:24.427" level="INFO">Typing password into text field 'id=password'.</msg>
+<status status="PASS" endtime="20180128 16:20:24.551" starttime="20180128 16:20:24.426"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:24.551" starttime="20180128 16:20:24.303"></status>
+</kw>
+<kw name="Click On Button" library="baseui_keywords">
+<doc>This keyword is used to click on buttons on webpage.</doc>
+<arguments>
+<arg>${CLICKONLOGINBUTTON}</arg>
+</arguments>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${CLICKONBUTTON}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:24.555" level="INFO">Clicking button '//button[.//text() = ' Login']'.</msg>
+<status status="PASS" endtime="20180128 16:20:25.458" starttime="20180128 16:20:24.555"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:25.458" starttime="20180128 16:20:24.553"></status>
+</kw>
+<kw name="Check Bad UserName Or Password" library="baseui_keywords">
+<doc>This keyword is used toverify if the user name or password is incorrect.</doc>
+<assign>
+<var>${flag}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${FLASH_ERROR}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:25.503" starttime="20180128 16:20:25.459"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${FLASH_ERROR_WO_SPACES}</arg>
+</arguments>
+<assign>
+<var>${Response}</var>
+</assign>
+<msg timestamp="20180128 16:20:25.544" level="INFO">${Response} = Your password is invalid!
+×</msg>
+<status status="PASS" endtime="20180128 16:20:25.544" starttime="20180128 16:20:25.503"></status>
+</kw>
+<kw name="Get Lines Containing String" library="String">
+<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
+<arguments>
+<arg>${Response}</arg>
+<arg>${FAILED_LOGIN_TEXT}</arg>
+</arguments>
+<assign>
+<var>${temp_val}</var>
+</assign>
+<msg timestamp="20180128 16:20:25.545" level="INFO">1 out of 2 lines matched</msg>
+<msg timestamp="20180128 16:20:25.545" level="INFO">${temp_val} = Your password is invalid!</msg>
+<status status="PASS" endtime="20180128 16:20:25.545" starttime="20180128 16:20:25.544"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${temp_val}' == '${FAILED_LOGIN_USER}' or '${temp_val}' == '${FAILED_LOGIN_PASS}'</arg>
+<arg>Set Variable</arg>
+<arg>True</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>False</arg>
+</arguments>
+<assign>
+<var>${flag}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>True</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:25.546" starttime="20180128 16:20:25.546"></status>
+</kw>
+<msg timestamp="20180128 16:20:25.546" level="INFO">${flag} = True</msg>
+<status status="PASS" endtime="20180128 16:20:25.546" starttime="20180128 16:20:25.545"></status>
+</kw>
+<msg timestamp="20180128 16:20:25.546" level="INFO">${flag} = True</msg>
+<status status="PASS" endtime="20180128 16:20:25.546" starttime="20180128 16:20:25.459"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${flag}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:25.547" starttime="20180128 16:20:25.546"></status>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180128 16:20:28.612" starttime="20180128 16:20:25.547"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:28.612" starttime="20180128 16:20:09.674"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:28.612" starttime="20180128 16:19:50.445"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:28.613" starttime="20180128 16:19:50.423"></status>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180128 16:20:28.615" starttime="20180128 16:20:28.614"></status>
+</kw>
+<kw type="teardown" name="End Test" library="baseui_keywords">
+<doc>This keyword is used to capture screenshot of page whenever test-case fails.</doc>
+<arguments>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>str(time.time())</arg>
+<arg>time</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180128 16:20:28.620" level="INFO">${time} = 1517136628.62</msg>
+<status status="PASS" endtime="20180128 16:20:28.620" starttime="20180128 16:20:28.619"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_NAME}-${time}.png</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:28.621" starttime="20180128 16:20:28.621"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:28.622" starttime="20180128 16:20:28.617"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:28.623" critical="yes" starttime="20180128 16:19:50.416"></status>
+</test>
+<test id="s1-t3" name="Verify the hover action">
+<kw name="Open Browser For Test" library="baseui_keywords">
+<doc>This keyword is used to open login page in browser.</doc>
+<arguments>
+<arg>${HOST}/hovers</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://${HOST123}</arg>
+<arg>${BROWSER123}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:28.639" level="INFO">Opening browser 'chrome' to base url 'http://the-internet.herokuapp.com/hovers'.</msg>
+<status status="PASS" endtime="20180128 16:20:43.413" starttime="20180128 16:20:28.638"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180128 16:20:44.547" starttime="20180128 16:20:43.413"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:44.547" starttime="20180128 16:20:28.637"></status>
+</kw>
+<kw name="Hover Mouse On Image To Get Data" library="baseui_keywords">
+<doc>This keyword is used to hover over images in web and return the data of hovered image.</doc>
+<arguments>
+<arg>${HOVER_MOUSE_IMG1}</arg>
+<arg>${HOVER_PATH1_TEXT}</arg>
+</arguments>
+<assign>
+<var>${content1}</var>
+</assign>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${IMAGE_NAME}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:44.553" level="INFO">Simulating Mouse Over on element 'xpath = //*[@id="content"]/div/div[1]/img'.</msg>
+<status status="PASS" endtime="20180128 16:20:44.599" starttime="20180128 16:20:44.552"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOVER_TEXT}</arg>
+</arguments>
+<assign>
+<var>${content}</var>
+</assign>
+<msg timestamp="20180128 16:20:44.663" level="INFO">${content} = name: user1</msg>
+<status status="PASS" endtime="20180128 16:20:44.663" starttime="20180128 16:20:44.599"></status>
+</kw>
+<msg timestamp="20180128 16:20:44.663" level="INFO">${content1} = name: user1</msg>
+<status status="PASS" endtime="20180128 16:20:44.663" starttime="20180128 16:20:44.552"></status>
+</kw>
+<kw name="Hover Mouse On Image To Get Data" library="baseui_keywords">
+<doc>This keyword is used to hover over images in web and return the data of hovered image.</doc>
+<arguments>
+<arg>${HOVER_MOUSE_IMG2}</arg>
+<arg>${HOVER_PATH2_TEXT}</arg>
+</arguments>
+<assign>
+<var>${content2}</var>
+</assign>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${IMAGE_NAME}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:44.669" level="INFO">Simulating Mouse Over on element 'xpath = //*[@id="content"]/div/div[2]/img'.</msg>
+<status status="PASS" endtime="20180128 16:20:44.720" starttime="20180128 16:20:44.669"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOVER_TEXT}</arg>
+</arguments>
+<assign>
+<var>${content}</var>
+</assign>
+<msg timestamp="20180128 16:20:44.770" level="INFO">${content} = name: user2</msg>
+<status status="PASS" endtime="20180128 16:20:44.770" starttime="20180128 16:20:44.721"></status>
+</kw>
+<msg timestamp="20180128 16:20:44.771" level="INFO">${content2} = name: user2</msg>
+<status status="PASS" endtime="20180128 16:20:44.771" starttime="20180128 16:20:44.668"></status>
+</kw>
+<kw name="Hover Mouse On Image To Get Data" library="baseui_keywords">
+<doc>This keyword is used to hover over images in web and return the data of hovered image.</doc>
+<arguments>
+<arg>${HOVER_MOUSE_IMG3}</arg>
+<arg>${HOVER_PATH3_TEXT}</arg>
+</arguments>
+<assign>
+<var>${content3}</var>
+</assign>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${IMAGE_NAME}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:44.775" level="INFO">Simulating Mouse Over on element 'xpath = //*[@id="content"]/div/div[3]/img'.</msg>
+<status status="PASS" endtime="20180128 16:20:44.815" starttime="20180128 16:20:44.775"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOVER_TEXT}</arg>
+</arguments>
+<assign>
+<var>${content}</var>
+</assign>
+<msg timestamp="20180128 16:20:44.856" level="INFO">${content} = name: user3</msg>
+<status status="PASS" endtime="20180128 16:20:44.856" starttime="20180128 16:20:44.815"></status>
+</kw>
+<msg timestamp="20180128 16:20:44.857" level="INFO">${content3} = name: user3</msg>
+<status status="PASS" endtime="20180128 16:20:44.857" starttime="20180128 16:20:44.774"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${content1}' == "name: user1" and '${content2}' == "name: user2" and '${content3}' == "name: user3"</arg>
+<arg>Set Variable</arg>
+<arg>True</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>False</arg>
+</arguments>
+<assign>
+<var>${flag}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>True</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:44.858" starttime="20180128 16:20:44.858"></status>
+</kw>
+<msg timestamp="20180128 16:20:44.859" level="INFO">${flag} = True</msg>
+<status status="PASS" endtime="20180128 16:20:44.859" starttime="20180128 16:20:44.857"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${flag}' == 'False'</arg>
+<arg>Fail</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:44.860" starttime="20180128 16:20:44.859"></status>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180128 16:20:47.932" starttime="20180128 16:20:44.861"></status>
+</kw>
+<kw type="teardown" name="End Test" library="baseui_keywords">
+<doc>This keyword is used to capture screenshot of page whenever test-case fails.</doc>
+<arguments>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>str(time.time())</arg>
+<arg>time</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180128 16:20:47.937" level="INFO">${time} = 1517136647.94</msg>
+<status status="PASS" endtime="20180128 16:20:47.937" starttime="20180128 16:20:47.935"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_NAME}-${time}.png</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:20:47.938" starttime="20180128 16:20:47.937"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:47.938" starttime="20180128 16:20:47.934"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:20:47.939" critical="yes" starttime="20180128 16:20:28.635"></status>
+</test>
+<test id="s1-t4" name="Verify ascending order of elements in table 2">
+<kw name="Open Browser For Test" library="baseui_keywords">
+<doc>This keyword is used to open login page in browser.</doc>
+<arguments>
+<arg>${HOST}/tables</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://${HOST123}</arg>
+<arg>${BROWSER123}</arg>
+</arguments>
+<msg timestamp="20180128 16:20:47.961" level="INFO">Opening browser 'chrome' to base url 'http://the-internet.herokuapp.com/tables'.</msg>
+<status status="PASS" endtime="20180128 16:21:21.775" starttime="20180128 16:20:47.960"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180128 16:21:22.923" starttime="20180128 16:21:21.776"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:22.924" starttime="20180128 16:20:47.958"></status>
+</kw>
+<kw name="Get WebElement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}/thead/tr/th[${COL_TO_SORT}]/span</arg>
+</arguments>
+<assign>
+<var>${Header_Item}</var>
+</assign>
+<msg timestamp="20180128 16:21:22.956" level="INFO">${Header_Item} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d806c73cb2de0eb75416b4e346b4071d", element="0.22910192841091193-1")&gt;</msg>
+<status status="PASS" endtime="20180128 16:21:22.956" starttime="20180128 16:21:22.925"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Header_Item}</arg>
+</arguments>
+<msg timestamp="20180128 16:21:22.957" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="d806c73cb2de0eb75416b4e346b4071d", element="0.22910192841091193-1")&gt;'.</msg>
+<status status="PASS" endtime="20180128 16:21:23.017" starttime="20180128 16:21:22.957"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>Bach</arg>
+<arg>Conway</arg>
+<arg>Doe</arg>
+<arg>Smith</arg>
+</arguments>
+<assign>
+<var>@{WEB_ELEMENTS_LIST_ASC}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.018" level="INFO">@{WEB_ELEMENTS_LIST_ASC} = [ Bach | Conway | Doe | Smith ]</msg>
+<status status="PASS" endtime="20180128 16:21:23.018" starttime="20180128 16:21:23.017"></status>
+</kw>
+<kw name="Verify the sort on table" library="table_operation_keywords">
+<doc>This keyword verifies the sort table .</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${WEB_ELEMENTS_LIST_ASC}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${flag}</var>
+</assign>
+<kw name="Get WebElements" library="Selenium2Library">
+<doc>Returns list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_COL}</arg>
+</arguments>
+<assign>
+<var>@{row}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.043" level="INFO">@{row} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="d806c73cb2de0eb75416b4e346b4071d", element="0.22910192841091193-2")&gt; ]</msg>
+<status status="PASS" endtime="20180128 16:21:23.043" starttime="20180128 16:21:23.023"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${LENGTH}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.043" level="INFO">Length is 1</msg>
+<msg timestamp="20180128 16:21:23.043" level="INFO">${LENGTH} = 1</msg>
+<status status="PASS" endtime="20180128 16:21:23.044" starttime="20180128 16:21:23.043"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>@{CELL_VALUE1}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.044" level="INFO">@{CELL_VALUE1} = [ ]</msg>
+<status status="PASS" endtime="20180128 16:21:23.044" starttime="20180128 16:21:23.044"></status>
+</kw>
+<kw type="for" name="${i} IN RANGE [ 0 | ${LENGTH} ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>@{row}[${i}]</arg>
+</arguments>
+<assign>
+<var>${details}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.080" level="INFO">${details} = Last Name First Name Email Due Web Site Action
+Bach Frank fbach@yahoo.com $51.00 http://www.frank.com edit delete
+Conway Tim tconway@earthlink.net $50.00 http://www.timconway.com edit delete
+Doe Jason...</msg>
+<status status="PASS" endtime="20180128 16:21:23.080" starttime="20180128 16:21:23.044"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${details}</arg>
+<arg>\n</arg>
+</arguments>
+<assign>
+<var>@{row_details}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.081" level="INFO">@{row_details} = [ Last Name First Name Email Due Web Site Action | Bach Frank fbach@yahoo.com $51.00 http://www.frank.com edit delete | Conway Tim tconway@earthlink.net $50.00 http://www.timconway.com edit delete | D...</msg>
+<status status="PASS" endtime="20180128 16:21:23.081" starttime="20180128 16:21:23.080"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${rowdetails}</arg>
+</arguments>
+<assign>
+<var>${row_len}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.081" level="INFO">Length is 5</msg>
+<msg timestamp="20180128 16:21:23.081" level="INFO">${row_len} = 5</msg>
+<status status="PASS" endtime="20180128 16:21:23.081" starttime="20180128 16:21:23.081"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:23.081" starttime="20180128 16:21:23.044"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:23.082" starttime="20180128 16:21:23.044"></status>
+</kw>
+<kw type="for" name="${j} IN RANGE [ 2 | ${row_len}+1 ]">
+<kw type="foritem" name="${j} = 2">
+<kw name="Get Table Cell" library="Selenium2Library">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${j}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${CELL_VALUE}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.170" level="INFO">${CELL_VALUE} = Bach</msg>
+<status status="PASS" endtime="20180128 16:21:23.170" starttime="20180128 16:21:23.082"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${CELL_VALUE}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:23.171" starttime="20180128 16:21:23.170"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:23.171" starttime="20180128 16:21:23.082"></status>
+</kw>
+<kw type="foritem" name="${j} = 3">
+<kw name="Get Table Cell" library="Selenium2Library">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${j}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${CELL_VALUE}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.251" level="INFO">${CELL_VALUE} = Conway</msg>
+<status status="PASS" endtime="20180128 16:21:23.251" starttime="20180128 16:21:23.171"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${CELL_VALUE}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:23.252" starttime="20180128 16:21:23.251"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:23.252" starttime="20180128 16:21:23.171"></status>
+</kw>
+<kw type="foritem" name="${j} = 4">
+<kw name="Get Table Cell" library="Selenium2Library">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${j}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${CELL_VALUE}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.329" level="INFO">${CELL_VALUE} = Doe</msg>
+<status status="PASS" endtime="20180128 16:21:23.329" starttime="20180128 16:21:23.252"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${CELL_VALUE}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:23.330" starttime="20180128 16:21:23.329"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:23.330" starttime="20180128 16:21:23.252"></status>
+</kw>
+<kw type="foritem" name="${j} = 5">
+<kw name="Get Table Cell" library="Selenium2Library">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${j}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${CELL_VALUE}</var>
+</assign>
+<msg timestamp="20180128 16:21:23.404" level="INFO">${CELL_VALUE} = Smith</msg>
+<status status="PASS" endtime="20180128 16:21:23.404" starttime="20180128 16:21:23.330"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${CELL_VALUE}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:23.404" starttime="20180128 16:21:23.404"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:23.404" starttime="20180128 16:21:23.330"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:23.404" starttime="20180128 16:21:23.082"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should be equal As Strings</arg>
+<arg>${CELL_VALUE1}</arg>
+<arg>${WEB_ELEMENTS_LIST}</arg>
+</arguments>
+<assign>
+<var>${flag}</var>
+</assign>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${WEB_ELEMENTS_LIST}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:23.405" starttime="20180128 16:21:23.405"></status>
+</kw>
+<msg timestamp="20180128 16:21:23.405" level="INFO">${flag} = True</msg>
+<status status="PASS" endtime="20180128 16:21:23.405" starttime="20180128 16:21:23.404"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:23.407" starttime="20180128 16:21:23.405"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${WEB_ELEMENTS_LIST}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:23.408" starttime="20180128 16:21:23.407"></status>
+</kw>
+<msg timestamp="20180128 16:21:23.409" level="INFO">${flag} = True</msg>
+<status status="PASS" endtime="20180128 16:21:23.409" starttime="20180128 16:21:23.022"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${flag}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:23.413" starttime="20180128 16:21:23.412"></status>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180128 16:21:26.481" starttime="20180128 16:21:23.414"></status>
+</kw>
+<kw type="teardown" name="End Test" library="baseui_keywords">
+<doc>This keyword is used to capture screenshot of page whenever test-case fails.</doc>
+<arguments>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>str(time.time())</arg>
+<arg>time</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180128 16:21:26.486" level="INFO">${time} = 1517136686.49</msg>
+<status status="PASS" endtime="20180128 16:21:26.486" starttime="20180128 16:21:26.485"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_NAME}-${time}.png</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:26.487" starttime="20180128 16:21:26.487"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:26.488" starttime="20180128 16:21:26.483"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:26.489" critical="yes" starttime="20180128 16:20:47.952"></status>
+</test>
+<test id="s1-t5" name="Verify descending order of elements in table 2">
+<kw name="Open Browser For Test" library="baseui_keywords">
+<doc>This keyword is used to open login page in browser.</doc>
+<arguments>
+<arg>${HOST}/tables</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://${HOST123}</arg>
+<arg>${BROWSER123}</arg>
+</arguments>
+<msg timestamp="20180128 16:21:26.513" level="INFO">Opening browser 'chrome' to base url 'http://the-internet.herokuapp.com/tables'.</msg>
+<status status="PASS" endtime="20180128 16:21:44.940" starttime="20180128 16:21:26.512"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180128 16:21:46.080" starttime="20180128 16:21:44.941"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:46.080" starttime="20180128 16:21:26.510"></status>
+</kw>
+<kw name="Get WebElement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}/thead/tr/th[${COL_TO_SORT}]/span</arg>
+</arguments>
+<assign>
+<var>${Header_Item}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.113" level="INFO">${Header_Item} = &lt;selenium.webdriver.remote.webelement.WebElement (session="eb21b8cac6995df402dbe57152b74a37", element="0.18739793830670348-1")&gt;</msg>
+<status status="PASS" endtime="20180128 16:21:46.113" starttime="20180128 16:21:46.081"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Header_Item}</arg>
+</arguments>
+<msg timestamp="20180128 16:21:46.114" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="eb21b8cac6995df402dbe57152b74a37", element="0.18739793830670348-1")&gt;'.</msg>
+<status status="PASS" endtime="20180128 16:21:46.193" starttime="20180128 16:21:46.114"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Header_Item}</arg>
+</arguments>
+<msg timestamp="20180128 16:21:46.194" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="eb21b8cac6995df402dbe57152b74a37", element="0.18739793830670348-1")&gt;'.</msg>
+<status status="PASS" endtime="20180128 16:21:46.258" starttime="20180128 16:21:46.194"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>Create List</arg>
+<arg>Bach</arg>
+<arg>Conway</arg>
+<arg>Doe</arg>
+<arg>Smith</arg>
+</arguments>
+<assign>
+<var>@{WEB_ELEMENTS_LIST_DES}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.259" level="INFO">@{WEB_ELEMENTS_LIST_DES} = [ Create List | Bach | Conway | Doe | Smith ]</msg>
+<status status="PASS" endtime="20180128 16:21:46.259" starttime="20180128 16:21:46.259"></status>
+</kw>
+<kw name="Verify the sort on table" library="table_operation_keywords">
+<doc>This keyword verifies the sort table .</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${WEB_ELEMENTS_LIST_DES}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${flag}</var>
+</assign>
+<kw name="Get WebElements" library="Selenium2Library">
+<doc>Returns list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_COL}</arg>
+</arguments>
+<assign>
+<var>@{row}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.284" level="INFO">@{row} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="eb21b8cac6995df402dbe57152b74a37", element="0.18739793830670348-2")&gt; ]</msg>
+<status status="PASS" endtime="20180128 16:21:46.284" starttime="20180128 16:21:46.262"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<assign>
+<var>${LENGTH}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.285" level="INFO">Length is 1</msg>
+<msg timestamp="20180128 16:21:46.285" level="INFO">${LENGTH} = 1</msg>
+<status status="PASS" endtime="20180128 16:21:46.285" starttime="20180128 16:21:46.285"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>@{CELL_VALUE1}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.286" level="INFO">@{CELL_VALUE1} = [ ]</msg>
+<status status="PASS" endtime="20180128 16:21:46.286" starttime="20180128 16:21:46.286"></status>
+</kw>
+<kw type="for" name="${i} IN RANGE [ 0 | ${LENGTH} ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>@{row}[${i}]</arg>
+</arguments>
+<assign>
+<var>${details}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.326" level="INFO">${details} = Last Name First Name Email Due Web Site Action
+Smith John jsmith@gmail.com $50.00 http://www.jsmith.com edit delete
+Doe Jason jdoe@hotmail.com $100.00 http://www.jdoe.com edit delete
+Conway Tim tconwa...</msg>
+<status status="PASS" endtime="20180128 16:21:46.326" starttime="20180128 16:21:46.286"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${details}</arg>
+<arg>\n</arg>
+</arguments>
+<assign>
+<var>@{row_details}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.327" level="INFO">@{row_details} = [ Last Name First Name Email Due Web Site Action | Smith John jsmith@gmail.com $50.00 http://www.jsmith.com edit delete | Doe Jason jdoe@hotmail.com $100.00 http://www.jdoe.com edit delete | Conway Ti...</msg>
+<status status="PASS" endtime="20180128 16:21:46.327" starttime="20180128 16:21:46.326"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${rowdetails}</arg>
+</arguments>
+<assign>
+<var>${row_len}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.327" level="INFO">Length is 5</msg>
+<msg timestamp="20180128 16:21:46.327" level="INFO">${row_len} = 5</msg>
+<status status="PASS" endtime="20180128 16:21:46.327" starttime="20180128 16:21:46.327"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:46.327" starttime="20180128 16:21:46.286"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:46.327" starttime="20180128 16:21:46.286"></status>
+</kw>
+<kw type="for" name="${j} IN RANGE [ 2 | ${row_len}+1 ]">
+<kw type="foritem" name="${j} = 2">
+<kw name="Get Table Cell" library="Selenium2Library">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${j}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${CELL_VALUE}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.453" level="INFO">${CELL_VALUE} = Smith</msg>
+<status status="PASS" endtime="20180128 16:21:46.454" starttime="20180128 16:21:46.328"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${CELL_VALUE}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:46.454" starttime="20180128 16:21:46.454"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:46.454" starttime="20180128 16:21:46.328"></status>
+</kw>
+<kw type="foritem" name="${j} = 3">
+<kw name="Get Table Cell" library="Selenium2Library">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${j}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${CELL_VALUE}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.554" level="INFO">${CELL_VALUE} = Doe</msg>
+<status status="PASS" endtime="20180128 16:21:46.555" starttime="20180128 16:21:46.455"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${CELL_VALUE}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:46.555" starttime="20180128 16:21:46.555"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:46.555" starttime="20180128 16:21:46.454"></status>
+</kw>
+<kw type="foritem" name="${j} = 4">
+<kw name="Get Table Cell" library="Selenium2Library">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${j}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${CELL_VALUE}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.645" level="INFO">${CELL_VALUE} = Conway</msg>
+<status status="PASS" endtime="20180128 16:21:46.645" starttime="20180128 16:21:46.556"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${CELL_VALUE}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:46.646" starttime="20180128 16:21:46.646"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:46.646" starttime="20180128 16:21:46.555"></status>
+</kw>
+<kw type="foritem" name="${j} = 5">
+<kw name="Get Table Cell" library="Selenium2Library">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${ID_UNMANAGED_TAB_TABLE_ROW}</arg>
+<arg>${j}</arg>
+<arg>${COL_TO_SORT}</arg>
+</arguments>
+<assign>
+<var>${CELL_VALUE}</var>
+</assign>
+<msg timestamp="20180128 16:21:46.732" level="INFO">${CELL_VALUE} = Bach</msg>
+<status status="PASS" endtime="20180128 16:21:46.732" starttime="20180128 16:21:46.647"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${CELL_VALUE}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:46.733" starttime="20180128 16:21:46.733"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:46.733" starttime="20180128 16:21:46.646"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:46.733" starttime="20180128 16:21:46.327"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Should be equal As Strings</arg>
+<arg>${CELL_VALUE1}</arg>
+<arg>${WEB_ELEMENTS_LIST}</arg>
+</arguments>
+<assign>
+<var>${flag}</var>
+</assign>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+<arg>${WEB_ELEMENTS_LIST}</arg>
+</arguments>
+<msg timestamp="20180128 16:21:46.734" level="FAIL">[u'Smith', u'Doe', u'Conway', u'Bach'] != [u'Create List', u'Bach', u'Conway', u'Doe', u'Smith']</msg>
+<status status="FAIL" endtime="20180128 16:21:46.734" starttime="20180128 16:21:46.734"></status>
+</kw>
+<msg timestamp="20180128 16:21:46.734" level="INFO">${flag} = False</msg>
+<status status="PASS" endtime="20180128 16:21:46.734" starttime="20180128 16:21:46.733"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${CELL_VALUE1}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:46.735" starttime="20180128 16:21:46.735"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${WEB_ELEMENTS_LIST}</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:46.738" starttime="20180128 16:21:46.735"></status>
+</kw>
+<msg timestamp="20180128 16:21:46.738" level="INFO">${flag} = False</msg>
+<status status="PASS" endtime="20180128 16:21:46.738" starttime="20180128 16:21:46.262"></status>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180128 16:21:49.813" starttime="20180128 16:21:46.739"></status>
+</kw>
+<kw type="teardown" name="End Test" library="baseui_keywords">
+<doc>This keyword is used to capture screenshot of page whenever test-case fails.</doc>
+<arguments>
+<arg>${TEST_NAME}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>str(time.time())</arg>
+<arg>time</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180128 16:21:49.818" level="INFO">${time} = 1517136709.82</msg>
+<status status="PASS" endtime="20180128 16:21:49.818" starttime="20180128 16:21:49.817"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Capture Page Screenshot</arg>
+<arg>${TEST_NAME}-${time}.png</arg>
+</arguments>
+<status status="PASS" endtime="20180128 16:21:49.819" starttime="20180128 16:21:49.819"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:49.820" starttime="20180128 16:21:49.815"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:49.820" critical="yes" starttime="20180128 16:21:26.504"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180128 16:21:49.839" starttime="20180128 16:21:49.838"></status>
+</kw>
+<status status="PASS" endtime="20180128 16:21:49.839" starttime="20180128 16:19:30.231"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="5">Critical Tests</stat>
+<stat fail="0" pass="5">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Build Sanity" pass="5">Build Sanity</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

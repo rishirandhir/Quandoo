@@ -1,0 +1,6 @@
+this folder houses the actual test file 
+
+build_sanity.robot - this file will contain and run the test to mark the build successfull.
+reports folder   - All the tests which run in the santiy will have the reports folder in it.
+		each folder will have 3 files log.html , report.html and output.xml.
+Data Folder   - Data folder will house any xls files you might want to use for values to test.

@@ -1,0 +1,8 @@
+this is the place were we define all the constants and variables.
+in each file respectively.
+
+
+all_variables. robot file will house all the variables that a user can change to alter his decision to run tests
+
+
+ex: user can change the browser type if he wants to run his tests on firefox instead of chrome.
