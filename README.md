@@ -3,9 +3,10 @@ Repository to test a webpage
 
 Overview:
   This framework will test the login, sorting and hover scenarios on a general webpage.
-  The technology stack that i have used is ROBOT FRAMEWORK with PYTHON and shell scripts to launch it.
+  The technology stack that i have used is ROBOT FRAMEWORK with PYTHON Python 2.7.14 and shell script to launch it.
   Each folder in the framework will have a description file of what the files will do.
   Also every keyword has the documentation associated with it.
+  With ROBOT i am using the selenium2Library , OperatingSystem Library and DateTime.
 
 How to Run:
   In the folder  \Quandoo_Project a file "Call_Test.ps1" is present, run this file from a shell prompt
@@ -18,7 +19,8 @@ Reports:
   eg: ..\Quandoo_Project\build_sanity\reports
   The report.html file will give you a representation of all the tests with the status and also tell what each keyword does . 
   Other report files will also be present viz. log.html and output.xml
-  I have kept a few example reports in the folder.
+  I have kept a few example reports in the folder from last run.
+  Also the console has a few checks and information about test which helps user to know what the test is doing.
   
 Faliure Analysis:
   If in case a test fails a screenshot with the test case name and date appended will be created.
